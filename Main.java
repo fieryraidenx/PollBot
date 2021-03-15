@@ -6,8 +6,7 @@ public class Main {
 
 
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws Exception {
         Chatbot civicBot = new Chatbot();
         System.out.println("Welcome to the Alameda Civics Bot! To stop chatting with our bot, type 'EXIT'\n");
         System.out.println(civicBot.getGreeting());

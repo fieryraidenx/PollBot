@@ -3,6 +3,7 @@ package com.company;
 public class Chatbot {
     private final String[] jokeCheck = new String[]{"joke", "humour", "sad", "funny", "laugh", "!", "happy"};
     private final String[] presidentCheck = new String[]{"president", "joe", "biden", "vice", "donald", "trump"};
+    private final String[] electionCheck = new String[]{"election", "vote", "poll"};
 
 
     public String getGreeting() {
@@ -17,7 +18,7 @@ public class Chatbot {
     }
 
 
-    public String getResponse(String statement) {
+    public String getResponse(String statement) throws Exception {
         String response = "";
         statement = statement.toLowerCase();
 
@@ -27,6 +28,11 @@ public class Chatbot {
 
         else if (statement.contains("no ") || statement.contains(" no")) {
             response = "If this is not a comfortable topic, we can talk about another one.";
+        }
+
+        else if(checkArray(statement, electionCheck)){
+            CivicInfo ci = new CivicInfo();
+            response = String.format("Here are some local elections running around here: \n%s", ci.getInfo());
         }
 
         else if (statement.contains("mother")
@@ -65,7 +71,8 @@ public class Chatbot {
     private String fallBack() {
         /*TODO: Add a couple of fallback statements*/
         String[] fallback = new String[]{
-                "Interesting, tell me more.", "Do you really think so?", "Hmmm.", "You don't say."
+                "Interesting, tell me more.", "Do you really think so?", "Hmmm.", "You don't say.",
+                "Nice! If you want to hear a joke, ?"
         };
         return fallback[(int) (Math.random() * fallback.length)];
     }
