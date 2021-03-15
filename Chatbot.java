@@ -38,7 +38,7 @@ public class Chatbot {
 
         else if (checkArray(statement, presidentCheck)){
             /*TODO: Add information on the website*/
-            response = "For more information on our current president, please check out this website: {}";
+            response = "For more information on U.S Presidents, please check out this website: https://www.whitehouse.gov/about-the-white-house/presidents/";
         }
 
         else if (checkArray(statement, jokeCheck)){
@@ -55,7 +55,9 @@ public class Chatbot {
     private String getRandomJoke() {
         /*TODO: Add a couple of jokes*/
         String[] jokeList = new String[]{
-                "Joke1", "Joke2", "Joke3"
+                "What is the difference between capitalism and socialism?\nIn a capitalist society, man exploits man,  and in a socialist one, it’s the other way around!",
+                "How did we know communism was doomed from the beginning?\nWhy, there were already many red flags!",
+                "Here's food for thought: If con is the opposite of pro, then isn’t Congress the opposite of progress?"
         };
         return jokeList[(int) (Math.random() * jokeList.length)];
     }
