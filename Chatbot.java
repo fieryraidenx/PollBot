@@ -5,16 +5,16 @@ public class Chatbot {
     private final String[] presidentCheck = new String[]{"president", "joe", "biden", "vice", "donald", "trump"};
     private final String[] electionCheck = new String[]{"election", "vote", "poll"};
 
-
-    public String getGreeting() {
-        return "Hello, let's talk.";
-    }
-
     private boolean checkArray(String statement, String[] array) {
+        //checks every word in statement to see if any of the words are in the check array
         for(String s : array){
             if(statement.contains(s)){return true;}
         }
         return false;
+    }
+    
+    public String getGreeting() {
+        return "Hello, let's talk.";
     }
 
 
