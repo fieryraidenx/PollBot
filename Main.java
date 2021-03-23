@@ -7,11 +7,13 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
+        //init Chatbot
         Chatbot civicBot = new Chatbot();
         System.out.println("Welcome to the Alameda Civics Bot! To stop chatting with our bot, type 'EXIT'\n");
         System.out.println(civicBot.getGreeting());
 
-        String response = ""; Scanner in = new Scanner(System.in);;
+        String response = ""; Scanner in = new Scanner(System.in);
+        //program loop till EXIT
         while (true){
             System.out.print(">");
             response = in.nextLine();
